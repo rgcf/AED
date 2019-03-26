@@ -1,17 +1,24 @@
+/*
+    Aluno: Ranieri Gomes Couto Filho
+    Lista de Exercícios 1 
+    Professor: Carlos Jones Rebello Junior
+    Disciplina: AED
+    Engenharia da Controle e Automação - Ifes campus Linhares
+*/
+
+//--------------------------INCLUSÃO DE BIBLIOTECAS---------------------------//
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include "funcoes.h"
 
 int main()
 {
     system("clear");
+    printf("Insira a letra correspondente a questao.\nPara limpar a tela digite 1.\nPara sair digite 0.\n");
 
     while (1)
     {
-
-        printf("\n\nInsira a letra correspondente a questao.\nPara limpar a tela digite 1.\nPara sair digite 0.\n");
-        fflush(stdin);
+        __fpurge(stdin);
         switch (getchar())
         {
         case 'a':
@@ -43,22 +50,22 @@ int main()
             potNum();
             break;
         case 'i':
-            diasMes();
+            numParImpar();
             break;
         case 'j':
-            diasMes();
+            numPosNeg();
             break;
         case 'k':
-            diasMes();
+            numParImparPosNeg();
             break;
         case 'l':
-            diasMes();
+            numPrimo();
             break;
         case 'm':
-            diasMes();
+            maiorNum();
             break;
         case 'n':
-            diasMes();
+            maior3num();
             break;
         case 'o':
             diasMes();
@@ -83,6 +90,8 @@ int main()
             printf("Valor inválido selecionado, tente novamente");
             break;
         }
+        printf("\n\nInsira a letra correspondente a questao.\nPara limpar a tela digite 1.\nPara sair digite 0.\n");
+        
     }
 
     return 0;
