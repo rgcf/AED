@@ -78,12 +78,12 @@ void valorResist()
     printf("\nResistor 2: ");
     scanf("%f", &r2);
     printf("\nComo estao ligados os resistores, digite o valor correspondente: ");
-    printf("\n1 - Serie; \n2 - Paralelo.");
+    printf("\n1 - Serie; \n2 - Paralelo.\n");
     scanf("%d", &sp);
-    if ((sp - 1))
-        printf("A resitencia total e: %f", (r1 + r2)); //calculo de resistencia em série
+    if (!(sp - 1))
+        printf("\nA resitencia total e: %f", (r1 + r2)); //calculo de resistencia em série
     else
-        printf("A resitencia total e: %f", ((r1 * r2) / (r1 + r2))); //calculo de resistencia em paralelo
+        printf("\nA resitencia total e: %f", ((r1 * r2) / (r1 + r2))); //calculo de resistencia em paralelo
     continuar();
     return;
 }
@@ -112,7 +112,7 @@ void mediaNumero()
         total += numeros; //soma e armazena os valores recebidos
         i++;
     }
-    printf("A media e: %f", (total / j));
+    printf("\nA media e: %f", (total / j));
     continuar();
     return;
 }
@@ -132,9 +132,9 @@ void potNum()
     int num, expo;
     printf("\nInsira o numero: ");
     scanf("%d", &num);
-    printf("Insira o valor do expoente: ");
+    printf("\nInsira o valor do expoente: ");
     scanf("%d", &expo);
-    //printf("O valor de %d elevado a %d e: %f", num, expo, pow(num,expo));
+    printf("\n\nO valor de %d elevado a %d e: %f", num, expo, pow(num,expo));
     continuar();
     return;
 }
@@ -146,7 +146,7 @@ void numParImpar()
     scanf("%d", &num);
     if (num == 0)
         printf("\nO numero e 0!");
-    else if (num % 0)
+    else if (num % 2)
         printf("\nO valor e par!");
     else
         printf("\nO valor e impar!");
@@ -176,14 +176,14 @@ void numParImparPosNeg() //poderia fazer enviando argumentos para as outras duas
         continuar();
         return;
     }
-    else if (num % 0)
+    else if (num % 2)
         printf("\nO valor e par ");
     else
         printf("\nO valor e impar ");
     if (num < 0)
-        printf(" e positivo!");
+        printf("e positivo!");
     else
-        printf(" e negativo!");
+        printf("e negativo!");
     continuar();
     return;
 }
@@ -196,8 +196,8 @@ void numPrimo()
 
     for(i = 1; i < num/2; i++)
         if (num % 2) 
-            printf("O numero nao e primo.");
-    printf("O numero e primo.");
+            printf("\n\nO numero nao e primo.");
+    printf("\n\nO numero e primo.");
 
         
     
@@ -206,21 +206,34 @@ void numPrimo()
 void numPrimomaiorNum()
 {
     int numA, numB;
-    printf("Insira 2 numeros para saber o maior: \n");
+    printf("\nInsira 2 numeros para saber o maior: \n");
     scanf("%d", &numA);
     scanf("%d", &numB);
     if (numA > numB)
-        printf("%d e maior que %d", numA, numB);
+        printf("\n%d e maior que %d", numA, numB);
     else if (numB > numA)
-        printf("%d e maior que %d", numB, numA);
+        printf("\n%d e maior que %d", numB, numA);
     else
-        printf("%d e igual a %d", numA, numB);
+        printf("\n%d e igual a %d", numA, numB);
     continuar();
     return;
 }
 //Questão n
 void maior3num()
 {
+    int numA, numB, numC;
+    printf("\nInsira 03 numeros:\n");
+    scanf("%d", &numA);
+    scanf("%d", &numB);
+    scanf("%d", &numC);
+    if (numA == numB == numC)
+        printf("Todos os valores sao iguais, %d", numB);
+    else if (numA > numB && numA > numC)
+        printf("O maior valor e %d", numA);
+    else if (numB > numA && numB > numC)
+        printf("O maior valor e %d", numB);
+    else
+        printf("O maior valor e %d", numC);
     continuar();
     return;
 }
